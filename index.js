@@ -3,7 +3,7 @@ var bodyParser  = require('body-parser');
 var express     = require('express');
 var logger      = require('morgan');
 var app         = express();
-var routes      = require('./routes');
+var routes      = require('./lib/controller');
 
 app.set('port', (process.env.PORT || config.port));
 

@@ -1,6 +1,6 @@
 {
   "host": "localhost",
-  "port": 9001,
+  "port": 9103,
   "routes": {
     "state": "/",
     "start": "/start",
@@ -8,13 +8,13 @@
     "end": "/end"
   },
   "snake" : {
-    "name": "battlesnake-node",
+    "name": "beanstream-bountysnake",
     "color": "#fff000",
-    "head_url": "http://battlesnake-node.herokuapp.com/",
+    "head_url": "http://beanstream-bountysnake.herokuapp.com/",
     "taunt": {
       "state": "It's great to be alive!",
       "move": "Outta my way snake!",
-      "start": "Let's do this thang!",
+      "start": "Potato",
       "end": "I've been snaked!"
     }
   }

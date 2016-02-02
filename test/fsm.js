@@ -22,14 +22,14 @@ describe("ai", function() {
       var fsm = require('../lib/ai/fsm')();
       expect(fsm).to.not.be.null;
       expect(fsm.getCurrentState()).to.be.null;
-      fsm.push('state1', function(){});
+      fsm.push(function(){});
       expect(fsm.getCurrentState()).to.not.be.null;
     });
     it('Should pop state', function() {
       var fsm = require('../lib/ai/fsm')();
       expect(fsm).to.not.be.null;
       expect(fsm.getCurrentState()).to.be.null;
-      fsm.push('state1', function(){
+      fsm.push(function(){
         return 'test state 1';
       });
       var popped = fsm.pop();
@@ -39,10 +39,10 @@ describe("ai", function() {
     });
     it('Should replace current state', function() {
       var fsm = require('../lib/ai/fsm')();
-      fsm.push('state1', function(){
+      fsm.push(function(){
         return 'test state 1';
       });
-      fsm.replaceCurrentState('state2', function(){
+      fsm.replaceCurrentState(function(){
         return 'test state 2';
       });
       expect(fsm.getCurrentState()).to.not.be.null;
@@ -50,16 +50,16 @@ describe("ai", function() {
     });
     it('Should run update() on current state', function() {
       var fsm = require('../lib/ai/fsm')();
-      fsm.push('state1', function(){
+      fsm.push(function(){
         return 'test state 1';
       });
-      fsm.replaceCurrentState('state2', function(){
+      fsm.replaceCurrentState(function(){
         return 'test state 2';
       });
       expect(fsm.getCurrentState()).to.not.be.null;
       expect(fsm.update({gameId: "game1"})).to.equal('test state 2');
     });
-    it('Should serialize state to a string array', function() {
+    /*it('Should serialize state to a string array', function() {
       var fsm = require('../lib/ai/fsm')();
 
       var funcOne = function(world){return 'one'};
@@ -70,6 +70,6 @@ describe("ai", function() {
       expect(fsm.getCurrentState()).to.not.be.null;
       expect(fsm.update({gameId: "game1"})).to.equal('two');
       expect(''+fsm.serialize()).to.equal('one,two');
-    });
+    });*/
   });
 });

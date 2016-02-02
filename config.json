@@ -17,5 +17,28 @@
       "start": "Potato",
       "end": ":blush: You've seen my source"
     }
+  },
+  "ai": {
+    "stateStackDepth": 10,
+    "usePredictiveBlocking": true,
+    "gridWeights": {
+      "threat": 3,
+      "caution": 2
+    },
+    "state": {
+      "idle": {
+        "needFoodAtHealthLessThan": 70,
+        "needFoodWhenBodyLessThan": 5
+      },
+      "goingToSafeSpot": {
+        "needFoodAtHealthLessThan": 70
+      },
+      "goingToGuard": {
+        "needFoodAtHealthLessThan": 70
+      },
+      "guarding": {
+        "needFoodAtHealthLessThan": 50
+      }
+    }
   }
 }

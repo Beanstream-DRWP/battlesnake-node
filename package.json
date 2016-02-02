@@ -15,7 +15,8 @@
     "body-parser": "^1.14.1",
     "express": "*",
     "morgan": "^1.6.1",
-    "nodemon": "*"
+    "nodemon": "*",
+    "javascript-astar": "~0.4.1"
   },
   "devDependencies": {
     "mocha": "~2.1.0",

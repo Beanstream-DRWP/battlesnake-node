@@ -1,3 +1,5 @@
+'use strict';
+
 var config      = require('./config.json');
 var bodyParser  = require('body-parser');
 var express     = require('express');

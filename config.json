@@ -8,14 +8,14 @@
     "end": "/end"
   },
   "snake" : {
-    "name": "beanstream-bountysnake",
+    "name": "Bean Snake",
     "color": "#fff000",
     "head_url": "http://beanstream-bountysnake.herokuapp.com/",
     "taunt": {
-      "state": "It's great to be alive!",
-      "move": "Outta my way snake!",
+      "state": "Quantum computer initializing. Adding He-3",
+      "move": "Dingus",
       "start": "Potato",
-      "end": "I've been snaked!"
+      "end": ":blush: You've seen my source"
     }
   }
 }

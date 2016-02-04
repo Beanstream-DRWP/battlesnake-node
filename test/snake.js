@@ -85,6 +85,65 @@ describe("ai", function() {
       var board = snake.buildBoard(world);
       expect(board).to.exist;
       board.prettyPrint();
+      expect(board.get(5,3)).to.equal(0);
+      expect(board.get(6,3)).to.equal(1);
+      expect(board.get(7,3)).to.equal(1);
+    });
+
+    it('Should use predictive blocking behind tail', function() {
+      
+      var mySnake = {coords:[ [8,5], [8,6], [8,7] ], name: config.snake.name};
+      var world = {
+        board: {
+          width: 10,
+          height: 10
+        },
+        food: [ ],
+        snakes: [
+          {coords:[ [1,3], [2,3], [3,3], [4,3], [5,3], [6,3], [7,3] ]},
+          mySnake
+        ]
+      };
+      var snake = require('../lib/ai/snake')(mySnake, world);
+
+      var board = snake.buildBoard(world);
+      expect(board).to.exist;
+      board.prettyPrint();
+      expect(board.get(1,3)).to.equal(0);
+      expect(board.get(2,3)).to.equal(3);
+      expect(board.get(3,3)).to.equal(2);
+      expect(board.get(4,3)).to.equal(1);
+      expect(board.get(5,3)).to.equal(1);
+      expect(board.get(6,3)).to.equal(1);
+      expect(board.get(7,3)).to.equal(1);
+    });
+
+    it('Should use predictive blocking infront of head', function() {
+      
+      var mySnake = {coords:[ [0,5], [0,6], [0,7] ], name: config.snake.name};
+      var world = {
+        board: {
+          width: 10,
+          height: 10
+        },
+        food: [ ],
+        snakes: [
+          {coords:[ [1,3], [2,3], [3,3], [4,3], [5,3], [6,3], [7,3] ]},
+          mySnake
+        ]
+      };
+      var snake = require('../lib/ai/snake')(mySnake, world);
+
+      var board = snake.buildBoard(world);
+      expect(board).to.exist;
+      board.prettyPrint();
+      expect(board.get(1,3)).to.equal(0);
+      expect(board.get(2,3)).to.equal(0);
+      expect(board.get(3,3)).to.equal(0);
+      expect(board.get(4,3)).to.equal(1);
+      expect(board.get(5,3)).to.equal(1);
+      expect(board.get(6,3)).to.equal(1);
+      expect(board.get(7,3)).to.equal(1);
     });
 
   });

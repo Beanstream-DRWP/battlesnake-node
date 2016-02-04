@@ -21,6 +21,7 @@
   "ai": {
     "stateStackDepth": 10,
     "usePredictiveBlocking": true,
+    "wallBuffer": 2,
     "gridWeights": {
       "threat": 3,
       "caution": 2

@@ -583,6 +583,25 @@ describe("ai", function() {
         });
       });
 
+      describe("moveToSafeSpotState", function() {
+        it('Should pick correct direction from head to coord', function() {
+          
+          var mySnake = {coords:[ [5,5] ], name: config.snake.name};
+          var world = {
+            board: {width: 10,height: 10},
+            snakes: [
+              mySnake
+            ]
+          };
+          var snake = require('../lib/ai/snake')(mySnake, world);
+          snake.buildBoard(world);
+          expect(snake.getDirToLoc([5,4])).to.equal(0);
+          expect(snake.getDirToLoc([6,5])).to.equal(1);
+          expect(snake.getDirToLoc([5,6])).to.equal(2);
+          expect(snake.getDirToLoc([4,5])).to.equal(3);
+        });
+      });
+
     });
   });
 });

@@ -479,7 +479,108 @@ describe("ai", function() {
           expect(loc[0]).to.equal(2);
           expect(loc[1]).to.equal(5);
         });
+      });
 
+      describe("moveToSafeSpotState.adjustTargetLocIfBlocked", function() {
+        it('Should find non-blocked location', function() {
+          
+          var mySnake = {coords:[ [1,1],[0,1] ], name: config.snake.name};
+          var world = {
+            board: {width: 10,height: 10},
+            snakes: [
+              mySnake,
+              {coords: [[5,5]]}
+            ]
+          };
+          var snake = require('../lib/ai/snake')(mySnake, world);
+          snake.buildBoard(world);
+          var newLoc = snake.adjustTargetLocIfBlocked([5,5]); // a blocked location
+          expect(newLoc).to.exist;
+          expect(newLoc[0]).to.equal(4);
+        });
+
+        it('Should find non-blocked location in large blocked area', function() {
+          
+          var mySnake = {coords:[ [1,1],[0,1] ], name: config.snake.name};
+          var world = {
+            board: {width: 10,height: 10},
+            snakes: [
+              mySnake,
+              {coords: [[4,4],[5,4],[6,4]]},
+              {coords: [[4,5],[5,5],[6,5]]},
+              {coords: [[4,6],[5,6],[6,6]]}
+            ]
+          };
+          var snake = require('../lib/ai/snake')(mySnake, world, true);
+          snake.buildBoard(world);
+          var newLoc = snake.adjustTargetLocIfBlocked([5,5]); // a blocked location
+          expect(newLoc).to.exist;
+          //snake.board.prettyPrint();
+          expect(newLoc[0]).to.equal(3);
+          expect(newLoc[1]).to.equal(3);
+        });
+      });
+
+      describe("moveToSafeSpotState", function() {
+        it('Should find path to destination', function() {
+          
+          var mySnake = {coords:[ [3,2],[2,2] ], name: config.snake.name};
+          var world = {
+            board: {width: 10,height: 10},
+            snakes: [
+              mySnake,
+              {coords: [[4,5], [5,5], [6,5], [7,5]]}
+            ]
+          };
+          var snake = require('../lib/ai/snake')(mySnake, world);
+          snake.buildBoard(world);
+          snake.board.prettyPrint();
+          snake.unblockMyHeadLocation(); // called here for testing
+          var path = snake.pathfind([3,2], [5,7]);
+          console.log(path);
+          expect(path).to.exist;
+          //expect(path.length).to.equal(7);
+        });
+        
+        it('Should find path to destination 2', function() {
+          
+          var mySnake = {coords:[ [5,3],[4,3] ], name: config.snake.name};
+          var world = {
+            board: {width: 10,height: 10},
+            snakes: [
+              mySnake,
+              {coords: [[3,5], [4,5], [5,5], [6,5], [7,5]]}
+            ]
+          };
+          var snake = require('../lib/ai/snake')(mySnake, world, true);
+          snake.buildBoard(world);
+          snake.board.prettyPrint();
+          snake.unblockMyHeadLocation(); // called here for testing
+          var path = snake.pathfind([5,3], [5,7]);
+          console.log(path);
+          expect(path).to.exist;
+          //expect(path.length).to.equal(6);
+        });
+
+        it('Should test', function() {
+          
+          var mySnake = {coords:[ [5,0] ], name: config.snake.name};
+          var world = {
+            board: {width: 10,height: 10},
+            snakes: [
+              mySnake,
+              {coords: [ [7,0] ] }
+            ]
+          };
+          var snake = require('../lib/ai/snake')(mySnake, world, true);
+          snake.buildBoard(world);
+          snake.board.prettyPrint();
+          snake.unblockMyHeadLocation(); // called here for testing
+          var path = snake.pathfind([5,0], [9,0]);
+          console.log(path);
+          expect(path).to.exist;
+          //expect(path.length).to.equal(6);
+        });
       });
 
     });

@@ -43,7 +43,7 @@ describe("ai", function() {
 
     it('Should build nav board', function() {
       
-      var mySnake = {coords:[ [1,7], [2,7] ], name: config.snake.name};
+      var mySnake = {coords:[ [1,7], [2,7] ], id: config.snake.id, name: config.snake.name};
       var world = {
         board: {
           width: 10,
@@ -68,7 +68,7 @@ describe("ai", function() {
 
     it('Should find snake head', function() {
       
-      var mySnake = {coords:[ [0,5], [0,6], [0,7] ], name: config.snake.name};
+      var mySnake = {coords:[ [0,5], [0,6], [0,7] ], id: config.snake.id, name: config.snake.name};
       var world = {
         board: {
           width: 10,
@@ -90,7 +90,7 @@ describe("ai", function() {
 
     it('Should use predictive blocking', function() {
       
-      var mySnake = {coords:[ [5,5], [5,6] ], name: config.snake.name};
+      var mySnake = {coords:[ [5,5], [5,6] ], id: config.snake.id, name: config.snake.name};
       var world = {
         board: {
           width: 10,
@@ -114,7 +114,7 @@ describe("ai", function() {
 
     it('Should use predictive blocking behind tail', function() {
       
-      var mySnake = {coords:[ [8,5], [8,6], [8,7] ], name: config.snake.name};
+      var mySnake = {coords:[ [8,5], [8,6], [8,7] ], id: config.snake.id, name: config.snake.name};
       var world = {
         board: {
           width: 10,
@@ -142,7 +142,7 @@ describe("ai", function() {
 
     it('Should use predictive blocking infront of head', function() {
       
-      var mySnake = {coords:[ [0,5], [0,6], [0,7] ], name: config.snake.name};
+      var mySnake = {coords:[ [0,5], [0,6], [0,7] ], id: config.snake.id, name: config.snake.name};
       var world = {
         board: {
           width: 10,
@@ -170,7 +170,7 @@ describe("ai", function() {
 
     it('Should be near top', function() {
       
-      var mySnake = {coords:[ [5,1] ], name: config.snake.name};
+      var mySnake = {coords:[ [5,1] ], id: config.snake.id, name: config.snake.name};
       var world = {
         board: {width: 10,height: 10},
         snakes: [mySnake]
@@ -181,7 +181,7 @@ describe("ai", function() {
 
     it('Should NOT be near top', function() {
       
-      var mySnake = {coords:[ [5,2] ], name: config.snake.name};
+      var mySnake = {coords:[ [5,2] ], id: config.snake.id, name: config.snake.name};
       var world = {
         board: {width: 10,height: 10},
         snakes: [mySnake]
@@ -192,7 +192,7 @@ describe("ai", function() {
 
     it('Should be near right', function() {
       
-      var mySnake = {coords:[ [9,1] ], name: config.snake.name};
+      var mySnake = {coords:[ [9,1] ], id: config.snake.id, name: config.snake.name};
       var world = {
         board: {width: 10,height: 10},
         snakes: [mySnake]
@@ -203,7 +203,7 @@ describe("ai", function() {
 
     it('Should NOT be near right', function() {
       
-      var mySnake = {coords:[ [7,2] ], name: config.snake.name};
+      var mySnake = {coords:[ [7,2] ], id: config.snake.id, name: config.snake.name};
       var world = {
         board: {width: 10,height: 10},
         snakes: [mySnake]
@@ -214,7 +214,7 @@ describe("ai", function() {
 
     it('Should be near bottom', function() {
       
-      var mySnake = {coords:[ [5,8] ], name: config.snake.name};
+      var mySnake = {coords:[ [5,8] ], id: config.snake.id, name: config.snake.name};
       var world = {
         board: {width: 10,height: 10},
         snakes: [mySnake]
@@ -226,7 +226,7 @@ describe("ai", function() {
 
     it('Should NOT be near bottom', function() {
       
-      var mySnake = {coords:[ [7,7] ], name: config.snake.name};
+      var mySnake = {coords:[ [7,7] ], id: config.snake.id, name: config.snake.name};
       var world = {
         board: {width: 10,height: 10},
         snakes: [mySnake]
@@ -238,7 +238,7 @@ describe("ai", function() {
 
     it('Should be near left', function() {
       
-      var mySnake = {coords:[ [0,8] ], name: config.snake.name};
+      var mySnake = {coords:[ [0,8] ], id: config.snake.id, name: config.snake.name};
       var world = {
         board: {width: 10,height: 10},
         snakes: [mySnake]
@@ -250,7 +250,7 @@ describe("ai", function() {
 
     it('Should NOT be near left', function() {
       
-      var mySnake = {coords:[ [2,7] ], name: config.snake.name};
+      var mySnake = {coords:[ [2,7] ], id: config.snake.id, name: config.snake.name};
       var world = {
         board: {width: 10,height: 10},
         snakes: [mySnake]
@@ -275,7 +275,7 @@ describe("ai", function() {
       describe("moveToSafeSpotState.getWiseDirection", function() {
         it('Should pick north location', function() {
           // pointing up
-          var mySnake = {coords:[ [4,5],[4,6] ], name: config.snake.name};
+          var mySnake = {coords:[ [4,5],[4,6] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [mySnake]
@@ -287,7 +287,7 @@ describe("ai", function() {
         });
         it('Should pick south location', function() {
           // pointing down
-          var mySnake = {coords:[ [4,6],[4,5] ], name: config.snake.name};
+          var mySnake = {coords:[ [4,6],[4,5] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [mySnake]
@@ -299,7 +299,7 @@ describe("ai", function() {
         });
         it('Should pick east location', function() {
           // pointing right
-          var mySnake = {coords:[ [5,5],[4,5] ], name: config.snake.name};
+          var mySnake = {coords:[ [5,5],[4,5] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [mySnake]
@@ -311,7 +311,7 @@ describe("ai", function() {
         });
         it('Should pick west location', function() {
           // pointing left
-          var mySnake = {coords:[ [4,5],[5,5] ], name: config.snake.name};
+          var mySnake = {coords:[ [4,5],[5,5] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [mySnake]
@@ -324,7 +324,7 @@ describe("ai", function() {
 
         it('Should pick north location from corners', function() {
           // pointing right in SE corner
-          var mySnake = {coords:[ [8,8],[7,8] ], name: config.snake.name};
+          var mySnake = {coords:[ [8,8],[7,8] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [mySnake]
@@ -335,7 +335,7 @@ describe("ai", function() {
           expect(dir).to.equal(0);
 
           // pointing left in SW corner
-          mySnake = {coords:[ [1,8],[2,8] ], name: config.snake.name};
+          mySnake = {coords:[ [1,8],[2,8] ], id: config.snake.id, name: config.snake.name};
           world = {
             board: {width: 10,height: 10},
             snakes: [mySnake]
@@ -348,7 +348,7 @@ describe("ai", function() {
 
         it('Should pick south location from corners', function() {
           // pointing right in NE corner
-          var mySnake = {coords:[ [8,1],[7,1] ], name: config.snake.name};
+          var mySnake = {coords:[ [8,1],[7,1] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [mySnake]
@@ -359,7 +359,7 @@ describe("ai", function() {
           expect(dir).to.equal(2);
 
           // pointing left in NW corner
-          mySnake = {coords:[ [1,1],[2,1] ], name: config.snake.name};
+          mySnake = {coords:[ [1,1],[2,1] ], id: config.snake.id, name: config.snake.name};
           world = {
             board: {width: 10,height: 10},
             snakes: [mySnake]
@@ -372,7 +372,7 @@ describe("ai", function() {
 
         it('Should pick west location from corners', function() {
           // pointing down in SE corner
-          var mySnake = {coords:[ [8,8],[8,7] ], name: config.snake.name};
+          var mySnake = {coords:[ [8,8],[8,7] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [mySnake]
@@ -383,7 +383,7 @@ describe("ai", function() {
           expect(dir).to.equal(3);
 
           // pointing up in NE corner
-          mySnake = {coords:[ [7,1],[7,2] ], name: config.snake.name};
+          mySnake = {coords:[ [7,1],[7,2] ], id: config.snake.id, name: config.snake.name};
           world = {
             board: {width: 10,height: 10},
             snakes: [mySnake]
@@ -396,7 +396,7 @@ describe("ai", function() {
 
         it('Should pick east location from corners', function() {
           // pointing down in SW corner
-          var mySnake = {coords:[ [1,8],[1,7] ], name: config.snake.name};
+          var mySnake = {coords:[ [1,8],[1,7] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [mySnake]
@@ -407,7 +407,7 @@ describe("ai", function() {
           expect(dir).to.equal(1);
 
           // pointing up in NW corner
-          mySnake = {coords:[ [1,1],[1,2] ], name: config.snake.name};
+          mySnake = {coords:[ [1,1],[1,2] ], id: config.snake.id, name: config.snake.name};
           world = {
             board: {width: 10,height: 10},
             snakes: [mySnake]
@@ -422,7 +422,7 @@ describe("ai", function() {
       describe("moveToSafeSpotState.findTargetInDistance", function() {
         it('Should find north location', function() {
           // pointing up
-          var mySnake = {coords:[ [4,5],[4,6] ], name: config.snake.name};
+          var mySnake = {coords:[ [4,5],[4,6] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [mySnake]
@@ -437,7 +437,7 @@ describe("ai", function() {
       
         it('Should find east location', function() {
           // pointing right
-          var mySnake = {coords:[ [4,5],[3,5] ], name: config.snake.name};
+          var mySnake = {coords:[ [4,5],[3,5] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [mySnake]
@@ -452,7 +452,7 @@ describe("ai", function() {
 
         it('Should find south location', function() {
           // pointing down
-          var mySnake = {coords:[ [4,5],[4,4] ], name: config.snake.name};
+          var mySnake = {coords:[ [4,5],[4,4] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [mySnake]
@@ -467,7 +467,7 @@ describe("ai", function() {
 
         it('Should find west location', function() {
           // pointing left
-          var mySnake = {coords:[ [4,5],[5,5] ], name: config.snake.name};
+          var mySnake = {coords:[ [4,5],[5,5] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [mySnake]
@@ -484,7 +484,7 @@ describe("ai", function() {
       describe("moveToSafeSpotState.adjustTargetLocIfBlocked", function() {
         it('Should find non-blocked location', function() {
           
-          var mySnake = {coords:[ [1,1],[0,1] ], name: config.snake.name};
+          var mySnake = {coords:[ [1,1],[0,1] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [
@@ -501,7 +501,7 @@ describe("ai", function() {
 
         it('Should find non-blocked location in large blocked area', function() {
           
-          var mySnake = {coords:[ [1,1],[0,1] ], name: config.snake.name};
+          var mySnake = {coords:[ [1,1],[0,1] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [
@@ -524,7 +524,7 @@ describe("ai", function() {
       describe("moveToSafeSpotState", function() {
         it('Should find path to destination', function() {
           
-          var mySnake = {coords:[ [3,2],[2,2] ], name: config.snake.name};
+          var mySnake = {coords:[ [3,2],[2,2] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [
@@ -544,7 +544,7 @@ describe("ai", function() {
         
         it('Should find path to destination 2', function() {
           
-          var mySnake = {coords:[ [5,3],[4,3] ], name: config.snake.name};
+          var mySnake = {coords:[ [5,3],[4,3] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [
@@ -564,7 +564,7 @@ describe("ai", function() {
 
         it('Should test', function() {
           
-          var mySnake = {coords:[ [5,0] ], name: config.snake.name};
+          var mySnake = {coords:[ [5,0] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [
@@ -583,10 +583,10 @@ describe("ai", function() {
         });
       });
 
-      describe("moveToSafeSpotState", function() {
+      describe("moveToSafeSpotState.helper", function() {
         it('Should pick correct direction from head to coord', function() {
           
-          var mySnake = {coords:[ [5,5] ], name: config.snake.name};
+          var mySnake = {coords:[ [5,5] ], id: config.snake.id, name: config.snake.name};
           var world = {
             board: {width: 10,height: 10},
             snakes: [
@@ -599,6 +599,119 @@ describe("ai", function() {
           expect(snake.getDirToLoc([6,5])).to.equal(1);
           expect(snake.getDirToLoc([5,6])).to.equal(2);
           expect(snake.getDirToLoc([4,5])).to.equal(3);
+        });
+      });
+
+      describe("moveToSafeSpotState", function() {
+        it('Should full-nav pick north', function() {
+          
+          var mySnake = {coords:[ [5,5], [5,6] ], id: config.snake.id, name: config.snake.name};
+          var world = {
+            board: {width: 10,height: 10},
+            snakes: [
+              mySnake
+            ]
+          };
+          var snake = require('../lib/ai/snake')(mySnake, world);
+          snake.buildBoard(world);
+          var dir = snake.moveToSafeSpotState(mySnake, world);
+          expect(dir).to.equal('north');
+        });
+        it('Should full-nav pick east', function() {
+          
+          var mySnake = {coords:[ [5,5], [4,5] ], id: config.snake.id, name: config.snake.name};
+          var world = {
+            board: {width: 10,height: 10},
+            snakes: [
+              mySnake
+            ]
+          };
+          var snake = require('../lib/ai/snake')(mySnake, world);
+          snake.buildBoard(world);
+          var dir = snake.moveToSafeSpotState(mySnake, world);
+          expect(dir).to.equal('east');
+        });
+        it('Should full-nav pick south', function() {
+          
+          var mySnake = {coords:[ [5,5], [5,3] ], id: config.snake.id, name: config.snake.name};
+          var world = {
+            board: {width: 10,height: 10},
+            snakes: [
+              mySnake
+            ]
+          };
+          var snake = require('../lib/ai/snake')(mySnake, world);
+          snake.buildBoard(world);
+          var dir = snake.moveToSafeSpotState(mySnake, world);
+          expect(dir).to.equal('south');
+        });
+        it('Should full-nav pick west', function() {
+          
+          var mySnake = {coords:[ [5,5], [6,5] ], id: config.snake.id, name: config.snake.name};
+          var world = {
+            board: {width: 10,height: 10},
+            snakes: [
+              mySnake
+            ]
+          };
+          var snake = require('../lib/ai/snake')(mySnake, world);
+          snake.buildBoard(world);
+          var dir = snake.moveToSafeSpotState(mySnake, world);
+          expect(dir).to.equal('west');
+        });
+        it('Should NOT full-nav pick west', function() {
+          
+          var mySnake = {coords:[ [5,5], [6,5] ], id: config.snake.id, name: config.snake.name};
+          var world = {
+            board: {width: 10,height: 10},
+            snakes: [
+              mySnake,
+              {coords: [ [4,5] ] }
+            ]
+          };
+          var snake = require('../lib/ai/snake')(mySnake, world);
+          snake.buildBoard(world);
+          var dir = snake.moveToSafeSpotState(mySnake, world);
+          expect(dir).to.not.equal('west');
+        });
+        it('Should NOT full-nav pick west 2', function() {
+          
+          var mySnake = {coords:[ [5,5], [6,5] ], id: config.snake.id, id: config.snake.id, name: config.snake.name};
+          var world = {
+            board: {width: 10,height: 10},
+            snakes: [
+              mySnake,
+              {coords: [ [3,5] ] }
+            ]
+          };
+          var snake = require('../lib/ai/snake')(mySnake, world);
+          snake.buildBoard(world);
+          var dir = snake.moveToSafeSpotState(mySnake, world);
+          expect(dir).to.not.equal('west');
+        });
+      });
+
+      describe("getMove", function() {
+        it('Should full-nav pick north', function() {
+          
+          var mySnake = {
+            coords:[ [5,5], [5,6] ], 
+            id: config.snake.id, name: config.snake.name,
+            health: 100
+          };
+          var world = {
+            game: 'test-game',
+            mode: 'test',
+            turn: 1,
+            board: {width: 10,height: 10},
+            snakes: [
+              mySnake
+            ]
+          };
+          var snake = require('../lib/ai/snake')(mySnake, world);
+          snake.buildBoard(world);
+          var dir = snake.moveToSafeSpotState(mySnake, world);
+          expect(dir).to.equal('north');
         });
       });
 

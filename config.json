@@ -9,17 +9,19 @@
   },
   "snake" : {
     "name": "Bean Snake",
-    "color": "#fff000",
+    "id": "e1551e73-125b-466f-b9dd-2fed4ec9ea79",
+    "color": "#10dd00",
     "head_url": "http://beanstream-bountysnake.herokuapp.com/",
     "taunt": {
       "state": "Quantum computer initializing. Adding He-3",
-      "move": "Dingus",
+      "goEat": "Green snake needs food badly",
+      "wander": "weeee",
       "start": "Potato",
       "end": ":blush: You've seen my source"
     }
   },
   "ai": {
-    "stateStackDepth": 10,
+    "stateStackDepth": 20,
     "usePredictiveBlocking": true,
     "wallBuffer": 2,
     "gridWeights": {

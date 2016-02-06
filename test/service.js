@@ -15,14 +15,14 @@ describe("api", function() {
 
       var world = {
         snakes: [
-          {name: 'test', color: '000000', taunt: 'one'},
-          {name: config.snake.name, color: '00FF00', taunt: 'bean'},
-          {name: 'other', color: 'FFFFFF', taunt: 'other one'}
+          {id: 'test', color: '000000', taunt: 'one'},
+          {id: config.snake.id, color: '00FF00', taunt: 'bean'},
+          {id: 'other', color: 'FFFFFF', taunt: 'other one'}
         ]
       };
       var mine = service._findMySnake(world);
       expect(mine).to.not.be.null;
-      expect(mine.name).to.equal(config.snake.name);
+      expect(mine.id).to.equal(config.snake.id);
     });
 
     it('Should start a game', function() {
@@ -33,9 +33,9 @@ describe("api", function() {
         mode: 'test',
         turn: '0',
         snakes: [
-          {name: 'test', color: '000000', taunt: 'one'},
-          {name: config.snake.name, color: '00FF00', taunt: 'bean'},
-          {name: 'other', color: 'FFFFFF', taunt: 'other one'}
+          {id: 'test', color: '000000', taunt: 'one'},
+          {id: config.snake.id, color: '00FF00', taunt: 'bean'},
+          {id: 'other', color: 'FFFFFF', taunt: 'other one'}
         ]
       };
       var response = service.StartGame(world);
@@ -52,9 +52,9 @@ describe("api", function() {
         mode: 'test',
         turn: '0',
         snakes: [
-          {name: 'test', color: '000000', taunt: 'one'},
-          {name: config.snake.name, color: '00FF00', taunt: 'bean'},
-          {name: 'other', color: 'FFFFFF', taunt: 'other one'}
+          {id: 'test', color: '000000', taunt: 'one'},
+          {id: config.snake.id, color: '00FF00', taunt: 'bean'},
+          {id: 'other', color: 'FFFFFF', taunt: 'other one'}
         ]
       };
       var response = service.StartGame(world);

@@ -11,7 +11,7 @@
     "name": "Bean Snake",
     "id": "e1551e73-125b-466f-b9dd-2fed4ec9ea79",
     "color": "#10dd00",
-    "head_url": "http://beanstream-bountysnake.herokuapp.com/",
+    "head_url": "http://support.beanstream.com/small-bean.png",
     "taunt": {
       "state": "Quantum computer initializing. Adding He-3",
       "goEat": "Green snake needs food badly",

@@ -48,7 +48,7 @@ describe("ai", function() {
       expect(fsm.getCurrentState()).to.not.be.null;
       expect(fsm.getCurrentState()()).to.equal('test state 2');
     });
-    it('Should run update() on current state', function() {
+    /*it('Should run update() on current state', function() {
       var fsm = require('../lib/ai/fsm')();
       fsm.push(function(){
         return 'test state 1';
@@ -58,18 +58,7 @@ describe("ai", function() {
       });
       expect(fsm.getCurrentState()).to.not.be.null;
       expect(fsm.update({gameId: "game1"})).to.equal('test state 2');
-    });
-    /*it('Should serialize state to a string array', function() {
-      var fsm = require('../lib/ai/fsm')();
-
-      var funcOne = function(world){return 'one'};
-      var funcTwo = function(world){return 'two'};
-
-      fsm.push('one', funcOne);
-      fsm.push('two', funcTwo);
-      expect(fsm.getCurrentState()).to.not.be.null;
-      expect(fsm.update({gameId: "game1"})).to.equal('two');
-      expect(''+fsm.serialize()).to.equal('one,two');
     });*/
+    
   });
 });

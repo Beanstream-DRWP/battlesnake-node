@@ -1,6 +1,6 @@
 {
   "host": "localhost",
-  "port": 9103,
+  "port": 9001,
   "routes": {
     "state": "/",
     "start": "/start",

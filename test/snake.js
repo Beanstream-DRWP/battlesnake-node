@@ -615,7 +615,7 @@ describe("ai", function() {
           var snake = require('../lib/ai/snake')(mySnake, world);
           snake.buildBoard(world);
           var dir = snake.moveToSafeSpotState(mySnake, world);
-          expect(dir).to.equal('north');
+          expect(dir.move).to.equal('north');
         });
         it('Should full-nav pick east', function() {
           
@@ -629,7 +629,7 @@ describe("ai", function() {
           var snake = require('../lib/ai/snake')(mySnake, world);
           snake.buildBoard(world);
           var dir = snake.moveToSafeSpotState(mySnake, world);
-          expect(dir).to.equal('east');
+          expect(dir.move).to.equal('east');
         });
         it('Should full-nav pick south', function() {
           
@@ -643,7 +643,7 @@ describe("ai", function() {
           var snake = require('../lib/ai/snake')(mySnake, world);
           snake.buildBoard(world);
           var dir = snake.moveToSafeSpotState(mySnake, world);
-          expect(dir).to.equal('south');
+          expect(dir.move).to.equal('south');
         });
         it('Should full-nav pick west', function() {
           
@@ -657,7 +657,7 @@ describe("ai", function() {
           var snake = require('../lib/ai/snake')(mySnake, world);
           snake.buildBoard(world);
           var dir = snake.moveToSafeSpotState(mySnake, world);
-          expect(dir).to.equal('west');
+          expect(dir.move).to.equal('west');
         });
         it('Should NOT full-nav pick west', function() {
           
@@ -672,7 +672,7 @@ describe("ai", function() {
           var snake = require('../lib/ai/snake')(mySnake, world);
           snake.buildBoard(world);
           var dir = snake.moveToSafeSpotState(mySnake, world);
-          expect(dir).to.not.equal('west');
+          expect(dir.move).to.not.equal('west');
         });
         it('Should NOT full-nav pick west 2', function() {
           
@@ -687,7 +687,7 @@ describe("ai", function() {
           var snake = require('../lib/ai/snake')(mySnake, world);
           snake.buildBoard(world);
           var dir = snake.moveToSafeSpotState(mySnake, world);
-          expect(dir).to.not.equal('west');
+          expect(dir.move).to.not.equal('west');
         });
       });
 
@@ -706,12 +706,15 @@ describe("ai", function() {
             board: {width: 10,height: 10},
             snakes: [
               mySnake
-            ]
+            ],
+            food: []
           };
           var snake = require('../lib/ai/snake')(mySnake, world);
-          snake.buildBoard(world);
-          var dir = snake.moveToSafeSpotState(mySnake, world);
-          expect(dir).to.equal('north');
+          
+          var resp = snake.getMove(mySnake, world);
+          expect(resp).to.exist;
+          console.log(resp);
+          expect(resp.taunt).to.equal(config.snake.taunt.wander);
         });
       });
 

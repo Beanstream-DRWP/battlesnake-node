@@ -66,6 +66,26 @@ describe("api", function() {
       service.End(world);
       expect(service.NumberOfGames()).to.equal(0);
     });
+
+    it('Should move in game', function() {
+      var service = require('../lib/service')();
+
+      var world = {
+        game: 'testGame1',
+        mode: 'test',
+        turn: '0',
+        snakes: [
+          {id: 'test', color: '000000', taunt: 'one'},
+          {id: config.snake.id, color: '00FF00', taunt: 'bean'},
+          {id: 'other', color: 'FFFFFF', taunt: 'other one'}
+        ],
+        food: [ [3,3]]
+      };
+      var response = service.StartGame(world);
+      expect(response).to.not.be.null;
+      expect(response.taunt).to.equal(config.snake.taunt.start);
+      expect(service.NumberOfGames()).to.equal(1);
+    });
     
   });
 });

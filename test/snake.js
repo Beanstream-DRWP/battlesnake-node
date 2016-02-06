@@ -272,6 +272,54 @@ describe("ai", function() {
 // ========================= STATES ==============================
     describe("STATES", function() {
 
+      describe("findFoodToEatState.findClosestFood", function() {
+        it('Should find food', function() {
+          // pointing up
+          var mySnake = {coords:[ [4,5],[4,6] ], id: config.snake.id, name: config.snake.name};
+          var world = {
+            board: {width: 10,height: 10},
+            snakes: [mySnake],
+            food: [ [2,5] ]
+          };
+          var snake = require('../lib/ai/snake')(mySnake, world);
+          var food = snake.findClosestFood(world);
+          expect(food).to.exist;
+          expect(food[0]).to.equal(2);
+          expect(food[1]).to.equal(5);
+        });
+
+        it('Should find closest food', function() {
+          // pointing up
+          var mySnake = {coords:[ [4,4],[5,4] ], id: config.snake.id, name: config.snake.name};
+          var world = {
+            board: {width: 10,height: 10},
+            snakes: [mySnake],
+            food: [ [2,4], [8,9] ]
+          };
+          var snake = require('../lib/ai/snake')(mySnake, world);
+          var food = snake.findClosestFood(world);
+          expect(food).to.exist;
+          expect(food[0]).to.equal(2);
+          expect(food[1]).to.equal(4);
+        });
+      });
+
+      describe("findFoodToEatState", function() {
+        it('Should find closest food', function() {
+          var mySnake = {coords:[ [4,4],[5,4] ], id: config.snake.id, name: config.snake.name};
+          var world = {
+            board: {width: 10,height: 10},
+            snakes: [mySnake],
+            food: [ [2,4], [8,9] ]
+          };
+          var snake = require('../lib/ai/snake')(mySnake, world);
+          snake.buildBoard(world);
+          var resp = snake.findFoodToEatState(mySnake, world);
+          expect(resp).to.exist;
+          expect(resp.move).to.equal('west');
+        });
+      });
+
       describe("moveToSafeSpotState.getWiseDirection", function() {
         it('Should pick north location', function() {
           // pointing up
